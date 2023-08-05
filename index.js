@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const licenses = ['None', 'Apache', 'BSD', 'Creative', 'GNU', 'MIT', 'Mozilla'];
+
 inquirer
   .Prompt([
     {
@@ -27,12 +29,7 @@ inquirer
         type: 'list',
         message: 'Which LICENSE is the application covered under (use the arrow keys)?',
         name: 'License',
-        choices: ['Academic Free License v3.0', 'Apache License 2.0', 'Artistic License 2.0', 'Boost Software License 1.0', 'BSD 2-clause Simplified License', 'BSD 3-clause New or Revised License',
-                    'BSD 3-clause Clear License', 'BSD 4-clause Original or Old License', 'BSD Zero-Clause License', 'Creative Commons License Family', 'Creative Commons Zero v1.0 Universal', 'Creative Commons Attribution 4.0',
-                    'Create Commons Attribution Share Alike 4.0', 'Do What The F*ck You Want To Public License', 'Education Community License v2.0', 'Eclipse Public License 1.0', 'Eclipse Public License 2.0',
-                    'European Union Public License 1.1', 'GNU Affero General Public License v.3.0', 'GNU General Public License family', 'GNU General Public License v2.0', 'GNU General Public License v3.0', 'ISC',
-                    'LaTeX Project Public License', 'Microsoft Public License', 'MIT', 'Mozilla Public License 2.0', 'Open Software License 3.0', 'PostgreSQL License', 'SIL Open Font License 1.1',
-                    'University of Illinois/NCSA Open Source License', 'The Unlicense', 'zLib License'],
+        choices: licenses,
     },
     {
         type: 'input',
@@ -60,11 +57,12 @@ inquirer
         name: 'Email',
     },
   ])
-  .then((response) => {
-    const dataXForm =
+//   .then((response) => { needs creation
 `
 # ${response.Title}\n
-${response.Desc} <a name="description"></a>\n\n
+${response.Desc} <a name="description"></a>\n
+\n
+This application is covered by the ${response.License} License.  More information can be found in the License Information section.\n\n
 ## Table of Contents:\n
 1.  [Description](#description)\n
 2.  [Installation Instructions](#install)\n
@@ -83,7 +81,7 @@ ${response.License} <a name="license"></a>\n\n
 ${response.Contribute} <a name="contribute"></a>\n\n
 ## Tests:<a name="tests"></a>\n
 ${response.Tests}\n\n
-## Questions<a name="questions"></a>:\n
+## Questions <a name="questions"></a>:\n
 You can find my Github at:  <https://github.com/${response.Ghun}>\n
 Alternatively, you can reach me by email at:  <${response.Email}>\n
 ${response.Questions}\n
@@ -92,18 +90,18 @@ ${response.Questions}\n
 
 // TODO:  Links in the Table of Contents should go to the corresponding section of the README.
 
-      fs.writeFile('README.md', dataXForm, 'utf8', (err) => {
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+    const fileName = "/output/README.md";
+
+    fs.writeFile(fileName, dataXForm, 'utf8', (err) => {
         if (err) {
             console.error('Error writing to file:', err);
         } else {
             console.log('Data has been written to README.md');
         }
         });
-  });
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+  };
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -111,14 +109,4 @@ function init() {}
 // Function call to initialize app
 init();
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}

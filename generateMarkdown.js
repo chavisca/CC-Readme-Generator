@@ -4,7 +4,7 @@ function renderLicenseBadge(License) {
     let badge = "";
   
     if(License != "none") {
-        badge = "![License Badge](https://img.shields.io/badge/License-" + License + "-green");
+        badge = "![License Badge](https://img.shields.io/badge/License-" + License + "-green)";
     }
   
     return badge;

@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown');
+const outputFileName = "./output/README.md";
 
 const licenses = ['None', 'Apache', 'BSD', 'Creative', 'GNU', 'MIT', 'Mozilla'];
 const questions = [
@@ -57,21 +58,23 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    const fileName = "./output/README.md";
 
     fs.writeFile(fileName, data, 'utf8', (err) => {
         if (err) {
             console.error('Error writing to file:', err);
         } else {
-            console.log('Data has been written to README.md');
+            console.log('Data has been written to ' + fileName);
         }
         });
   };
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.Prompt(questions)
-    .then (response => writeToFile(generateMarkdown(response)))
+    inquirer.prompt(questions)
+    .then (response => {
+        const fileTBG = generateMarkdown(response);
+        writeToFile(outputFileName, fileTBG);
+});
 }
 
 // Function call to initialize app

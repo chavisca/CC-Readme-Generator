@@ -2,9 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const licenses = ['None', 'Apache', 'BSD', 'Creative', 'GNU', 'MIT', 'Mozilla'];
-
-inquirer
-  .Prompt([
+const questions = [
     {
         type: 'input',
         message: 'What would you like the TITLE to be?',
@@ -56,8 +54,7 @@ inquirer
         message: 'What is your EMAIL?',
         name: 'Email',
     },
-  ])
-//   .then((response) => { needs creation
+  ];
 `
 # ${response.Title}\n
 ${response.Desc} <a name="description"></a>\n

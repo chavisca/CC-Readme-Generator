@@ -50,7 +50,7 @@ function renderLicenseBadge(License) {
   
     if (License != "none") {
         licenseSection += '## License\n"'
-        licenseSection += "License information for " + renderLicenseLink(License) + "can be found at the included link.\n"
+        licenseSection += "License information for " + License + " can be found at the following link: \n" + renderLicenseLink(License) + "\n";
     }
   
     return licenseSection;
@@ -60,7 +60,7 @@ function renderLicenseBadge(License) {
   function generateMarkdown(data) {
     const sections = ["Description", "Installation Instructions", "Usage Information", "License Information", "Contribution Guidelines", "Tests", "Questions"];
  
-    let markdown = "# " + data.Title + "\n";
+    let markdown = "# " + data.Title + " ";
   
     markdown += renderLicenseBadge(data.License) + "\n";
   
@@ -68,8 +68,10 @@ function renderLicenseBadge(License) {
     for (let i=0; i<sections.length; i++) {
         // Line below removes License section if license is none
       if(! (sections[i] === "License" && data.License === "none")) {
+        //replaces spaces with dages for valid anchor links
+        const anchorLink = sections[i].toLowerCase().replace(/\s+/g, '-');
         // Line below creates a numbered list of clickable links by making anchor links
-        markdown += i+1 + ". [" + sections[i] + "](#" + sections[i][0].toLowerCase() + sections[i].substring(1) + ")\n";
+        markdown += i + 1 + ". [" + sections[i] + "](#" + anchorLink + ")\n";
       }
     }
     markdown += "\n";
@@ -92,9 +94,9 @@ function renderLicenseBadge(License) {
     markdown += "## " + sections[5] + "\n";
     markdown += data.Tests + "\n";
   
-    markdown += "## + sections[6]" + "\n";
-    markdown += "You can find me on GitHub [HERE](https://github.com/" + data.Ghun + ") \n";
-    markdown += "You can reach me by email at " + data.Email + "\n";
+    markdown += "## " + sections[6] + "\n";
+    markdown += "You can find me on GitHub [HERE](https://github.com/" + data.Ghun + ") \n\n";
+    markdown += "You can reach me by email at: " + data.Email + "\n";
   
     return markdown;
   }

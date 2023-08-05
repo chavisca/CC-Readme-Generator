@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./generateMarkdown.js');
+const generateMarkdown = require('./generateMarkdown');
 
 const licenses = ['None', 'Apache', 'BSD', 'Creative', 'GNU', 'MIT', 'Mozilla'];
 const questions = [
@@ -42,11 +42,6 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What instructionsdo you want to provide for QUESTIONS (other than Github Username and Email)?',
-        name: 'Questions',
-    },
-    {
-        type: 'input',
         message: 'What is your GITHUB USERNAME?',
         name: 'GHun',
     },
@@ -81,5 +76,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-

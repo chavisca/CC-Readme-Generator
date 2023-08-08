@@ -49,7 +49,6 @@ function renderLicenseBadge(License) {
     let licenseSection = "";
   
     if (License != "none") {
-        licenseSection += '## License\n"'
         licenseSection += "License information for " + License + " can be found at the following link: \n" + renderLicenseLink(License) + "\n";
     }
   
@@ -95,7 +94,7 @@ function renderLicenseBadge(License) {
     markdown += data.Tests + "\n";
   
     markdown += "## " + sections[6] + "\n";
-    markdown += "You can find me on GitHub [HERE](https://github.com/" + data.Ghun + ") \n\n";
+    markdown += "You can find me on GitHub [HERE](https://github.com/" + data.GHun + ") \n\n";
     markdown += "You can reach me by email at: " + data.Email + "\n";
   
     return markdown;

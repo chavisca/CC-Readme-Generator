@@ -23,6 +23,9 @@ License information for MIT can be found at the following link:
 https://opensource.org/license/mit/
 
 ## Contribution Guidelines
+Source code is found in the starter code folder.  
+Additionally, it is found here:  https://github.com/coding-boot-camp/potential-enigma  
+
 Please improve on the readme generator as necessary if any bugs are found.  
 
 ## Tests

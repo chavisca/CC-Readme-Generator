@@ -1,4 +1,4 @@
-# Sample README ![License Badge](https://img.shields.io/badge/License-GNU-green)
+# Demo Video Title ![License Badge](https://img.shields.io/badge/License-Creative-green)
 ## Table of Contents 
 1. [Description](#description)
 2. [Installation Instructions](#installation-instructions)
@@ -9,20 +9,20 @@
 7. [Questions](#questions)
 
 ## Description
-Sample Readme Description
+Demo Video Description
 ## Installation Instructions
-Sample Readme Installation Instructions
+Demo Video Installation Instructions
 ## Usage Information
-Sample Readme Usage Info
+Use it however you'd like
 ## License Information
-License information for GNU can be found at the following link: 
-https://www.gnu.org/licenses/gpl-3.0.en.html
+License information for Creative can be found at the following link: 
+https://creativecommons.org/licenses/
 
 ## Contribution Guidelines
-Sample Readme Contribution Guidelines
+Please make this app better
 ## Tests
-Sample Readme Tests
+Demo Video is the Final Test
 ## Questions
-You can find me on GitHub [HERE](https://github.com/sample github username) 
+You can find me on GitHub [HERE](https://github.com/chavisca) 
 
-You can reach me by email at: sampleemail@sample
+You can reach me by email at: chavisca@gmail.com

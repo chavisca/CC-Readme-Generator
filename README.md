@@ -36,6 +36,6 @@ You can find me on GitHub [HERE](https://github.com/chavisca)
 
 You can reach me by email at: chavisca@gmail.com  
 
-Link to video walkthrough:  https://vimeo.com/852540370/89dc74df37?share=copy
+Link to video walkthrough:  https://vimeo.com/853530172?share=copy
 
 ![Screenshot](./assets/images/screenshot.jpg?raw=true "Readme Screenshot")
